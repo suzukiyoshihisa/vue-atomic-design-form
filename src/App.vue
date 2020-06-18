@@ -1,28 +1,54 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Pages</h1>
+    <main>
+      <MoleculesInputForm
+        :hoge="hoge"
+        @pushSubmitButton="alertInputValue"
+        @piyo="fun($event)"
+      />
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import MoleculesInputForm from './components/molecules/MoleculesInputForm';
 
 export default {
-  name: "App",
   components: {
-    HelloWorld
-  }
+    MoleculesInputForm,
+  },
+  methods: {
+    alertInputValue() {
+      alert(this.hoge);
+    },
+    fun(event) {
+      console.log(event);
+    },
+  },
+  data() {
+    return {
+      hoge: '',
+    };
+  },
 };
 </script>
 
 <style>
 #app {
+  display: flex;
+  justify-content: center;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 </style>
