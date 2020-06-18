@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import MoleculesInputForm from './components/molecules/MoleculesInputForm';
+import MoleculesInputForm from "./components/molecules/MoleculesInputForm"
 
 export default {
   components: {
@@ -19,18 +19,19 @@ export default {
   },
   methods: {
     alertInputValue() {
-      alert(this.inputValue);
+      alert(this.inputValue)
     },
     fun(event) {
-      this.inputValue = event;
+      console.log(event)
+      this.inputValue = event
     },
   },
   data() {
     return {
-      inputValue: '',
-    };
+      inputValue: "",
+    }
   },
-};
+}
 </script>
 
 <style>

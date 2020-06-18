@@ -1,14 +1,14 @@
 <template>
   <div class="molecules">
     <h2>molecules</h2>
-    <atom-form v-model="value" @input="fuga" />
+    <atom-form v-model="value" @input="$emit('piyo', value)" />
     <atom-button @pushSubmitButton="$emit('pushSubmitButton')" />
   </div>
 </template>
 
 <script>
-import AtomButton from '../atoms/AtomButton';
-import AtomForm from '../atoms/AtomForm';
+import AtomButton from "../atoms/AtomButton"
+import AtomForm from "../atoms/AtomForm"
 
 export default {
   components: {
@@ -17,13 +17,8 @@ export default {
   },
   data() {
     return {
-      value: '',
-    };
+      value: "",
+    }
   },
-  methods: {
-    fuga() {
-      this.$emit('piyo', this.value);
-    },
-  },
-};
+}
 </script>
