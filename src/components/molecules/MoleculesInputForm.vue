@@ -1,8 +1,6 @@
 <template>
   <div class="molecules">
     <h2>molecules</h2>
-    <p>v:{{ value }}</p>
-    <p>hoge:{{ hoge }}</p>
     <atom-form v-model="value" @input="fuga" />
     <atom-button @pushSubmitButton="$emit('pushSubmitButton')" />
   </div>
@@ -16,12 +14,6 @@ export default {
   components: {
     AtomButton,
     AtomForm,
-  },
-  props: {
-    hoge: {
-      type: String,
-      default: '',
-    },
   },
   data() {
     return {
