@@ -19,15 +19,15 @@ export default {
   },
   methods: {
     alertInputValue() {
-      alert(this.event);
+      alert(this.inputValue);
     },
     fun(event) {
-      console.log(event);
+      this.inputValue = event;
     },
   },
   data() {
     return {
-      hoge: '',
+      inputValue: '',
     };
   },
 };
