@@ -3,6 +3,7 @@
     <h1>Pages</h1>
     <main>
       <MoleculesInputForm
+        :hoge="hoge"
         @pushSubmitButton="alertInputValue"
         @piyo="fun($event)"
       />
@@ -19,16 +20,18 @@ export default {
   },
   methods: {
     alertInputValue() {
-      alert(this.inputValue)
+      alert(this.hoge)
     },
     fun(event) {
       console.log(event)
+      this.hoge = event
       this.inputValue = event
     },
   },
   data() {
     return {
       inputValue: "",
+      hoge: "hoge",
     }
   },
 }
