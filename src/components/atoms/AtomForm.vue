@@ -5,6 +5,7 @@
     <input
       type="text"
       class="input"
+      :value="inputValue"
       @input="$emit('input', $event.target.value)"
       placeholder="入力フォーム"
     />

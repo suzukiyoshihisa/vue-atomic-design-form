@@ -4,6 +4,7 @@
     <p>{{ inputValue }}</p>
     <atom-form
       v-model="value"
+      :value="inputValue"
       :inputValue="inputValue"
       @input="$emit('input', value)"
     />
