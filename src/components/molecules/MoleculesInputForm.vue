@@ -1,8 +1,12 @@
 <template>
   <div class="molecules">
     <h2>molecules</h2>
-    <p>{{ hoge }}</p>
-    <atom-form v-model="value" :hoge="hoge" @input="$emit('piyo', value)" />
+    <p>{{ inputValue }}</p>
+    <atom-form
+      v-model="value"
+      :inputValue="inputValue"
+      @input="$emit('input', value)"
+    />
     <atom-button @pushSubmitButton="$emit('pushSubmitButton')" />
   </div>
 </template>
@@ -22,7 +26,7 @@ export default {
     }
   },
   props: {
-    hoge: {
+    inputValue: {
       type: String,
       require: true,
     },

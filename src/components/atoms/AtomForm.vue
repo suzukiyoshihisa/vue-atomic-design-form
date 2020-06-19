@@ -1,6 +1,7 @@
 <template>
   <div>
-    <p>{{ hoge }}</p>
+    <h2>atom</h2>
+    <p>{{ inputValue }}</p>
     <input
       type="text"
       class="input"
@@ -13,7 +14,7 @@
 <script>
 export default {
   props: {
-    hoge: {
+    inputValue: {
       type: String,
       require: true,
     },

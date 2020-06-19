@@ -3,9 +3,9 @@
     <h1>Pages</h1>
     <main>
       <MoleculesInputForm
-        :hoge="hoge"
+        :inputValue="inputValue"
         @pushSubmitButton="alertInputValue"
-        @piyo="fun($event)"
+        @input="updateValue($event)"
       />
     </main>
   </div>
@@ -18,21 +18,20 @@ export default {
   components: {
     MoleculesInputForm,
   },
-  methods: {
-    alertInputValue() {
-      alert(this.hoge)
-    },
-    fun(event) {
-      console.log(event)
-      this.hoge = event
-      this.inputValue = event
-    },
-  },
   data() {
     return {
-      inputValue: "",
-      hoge: "hoge",
+      inputValue: "jo",
     }
+  },
+  methods: {
+    alertInputValue() {
+      // ここでAPIコールを行うイメージ
+      alert(this.inputValue)
+    },
+    updateValue(event) {
+      // データの更新
+      this.inputValue = event
+    },
   },
 }
 </script>
