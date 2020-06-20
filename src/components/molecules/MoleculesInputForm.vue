@@ -2,12 +2,7 @@
   <div class="molecules">
     <h2>molecules</h2>
     <p>{{ inputValue }}</p>
-    <atom-form
-      v-model="value"
-      :value="inputValue"
-      :inputValue="inputValue"
-      @input="$emit('input', value)"
-    />
+    <atom-form :value="inputValue" @change="changeFromValue" />
     <atom-button @pushSubmitButton="$emit('pushSubmitButton')" />
   </div>
 </template>
@@ -21,15 +16,15 @@ export default {
     AtomButton,
     AtomForm,
   },
-  data() {
-    return {
-      value: "",
-    }
-  },
   props: {
     inputValue: {
       type: String,
       require: true,
+    },
+  },
+  methods: {
+    changeFromValue: function(inputValue) {
+      this.$emit("change", inputValue)
     },
   },
 }

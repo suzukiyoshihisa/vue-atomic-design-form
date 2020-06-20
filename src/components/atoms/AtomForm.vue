@@ -1,23 +1,28 @@
 <template>
   <div>
     <h2>atom</h2>
-    <p>{{ inputValue }}</p>
-    <input
-      type="text"
-      class="input"
-      :value="inputValue"
-      @input="$emit('input', $event.target.value)"
-      placeholder="入力フォーム"
-    />
+    <p>{{ value }}</p>
+    <input type="text" class="input" v-model="inputText" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    inputValue: {
+    value: {
       type: String,
       require: true,
+    },
+  },
+  computed: {
+    inputText: {
+      get: function() {
+        return this.value
+      },
+      set: function(value) {
+        // inputに入力があった場合にイベントを発行
+        this.$emit("change", value)
+      },
     },
   },
 }

@@ -5,7 +5,7 @@
       <MoleculesInputForm
         :inputValue="inputValue"
         @pushSubmitButton="alertInputValue"
-        @input="updateValue($event)"
+        @change="updateValue"
       />
     </main>
   </div>
@@ -20,7 +20,8 @@ export default {
   },
   data() {
     return {
-      inputValue: "jo",
+      // Pagesでデータの保持
+      inputValue: "",
     }
   },
   methods: {
@@ -28,9 +29,9 @@ export default {
       // ここでAPIコールを行うイメージ
       alert(this.inputValue)
     },
-    updateValue(event) {
+    updateValue(newValue) {
       // データの更新
-      this.inputValue = event
+      this.inputValue = newValue
     },
   },
 }
